@@ -29,7 +29,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `eoi` (
   `EOInumber` int(11) NOT NULL,
-  `JobReferenceNumber` varchar(3) NOT NULL,
+  `JobReferenceNumber` varchar(5) NOT NULL,
   `FirstName` varchar(20) NOT NULL,
   `LastName` varchar(20) NOT NULL,
   `StreetAddress` varchar(40) DEFAULT NULL,
