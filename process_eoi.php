@@ -29,7 +29,7 @@ $state              = sanitise($conn, $_POST['state']);
 $postcode           = sanitise($conn, $_POST['postcode']);
 $email              = sanitise($conn, $_POST['email']);
 $phonenumber        = sanitise($conn, $_POST['phonenumber']);
-$otherskills        = isset($_POST['otherskills']) ? sanitise($conn, $_POST['otherskills']) : "";
+$otherskills        = sanitise($conn, $_POST['otherskills']);
 
 // --- Combine technical skills checkboxes ---
 $skills = [];
@@ -76,7 +76,6 @@ if (count($errors) > 0) {
     exit();
 }
 
-<<<<<<< HEAD
 // --- CREATE TABLE IF NOT EXISTS (auto creation) ---
 $create_table_sql = "
 CREATE TABLE IF NOT EXISTS eoi (
@@ -92,24 +91,6 @@ CREATE TABLE IF NOT EXISTS eoi (
     PhoneNumber VARCHAR(15),
     OtherSkills TEXT,
     Status VARCHAR(20)
-=======
-// --- Create EOI table if it doesn't exist ---
-$table_sql = "CREATE TABLE IF NOT EXISTS eoi (
-    eoi_id INT AUTO_INCREMENT PRIMARY KEY,
-    job_ref VARCHAR(10),
-    first_name VARCHAR(20),
-    last_name VARCHAR(20),
-    dob DATE,
-    gender VARCHAR(10),
-    street VARCHAR(40),
-    suburb VARCHAR(40),
-    state VARCHAR(10),
-    postcode VARCHAR(4),
-    email VARCHAR(50),
-    phone VARCHAR(15),
-    otherskills TEXT,
-    status VARCHAR(20)
->>>>>>> bcedb0794d1bed63827c82048f1203a9c0e343e8
 )";
 if (!mysqli_query($conn, $create_table_sql)) {
     die("Error creating table: " . mysqli_error($conn));
@@ -117,15 +98,9 @@ if (!mysqli_query($conn, $create_table_sql)) {
 
 // --- Insert form data into the database ---
 $insert_sql = "INSERT INTO eoi 
-<<<<<<< HEAD
 (JobReferenceNumber, FirstName, LastName, StreetAddress, SuburbTown, State, Postcode, Email, PhoneNumber, OtherSkills, Status) 
 VALUES 
 ('$jobreferencenumber', '$firstname', '$lastname', '$streetaddress', '$suburbtown', '$state', '$postcode', '$email', '$phonenumber', '$otherskills', 'New')";
-=======
-(job_ref, first_name, last_name, street, suburb, state, postcode, email, phone, skills, otherskills, status) 
-VALUES 
-('$jobreferencenumber', '$firstname', '$lastname', '$street', '$suburb', '$state', '$postcode', '$email', '$phonenumber', '$skills_text, '$otherskills' 'New')";
->>>>>>> bcedb0794d1bed63827c82048f1203a9c0e343e8
 
 if (mysqli_query($conn, $insert_sql)) {
     $eoi_id = mysqli_insert_id($conn); // get auto-generated EOInumber
