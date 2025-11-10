@@ -87,8 +87,13 @@
             <label><input type="checkbox" name="req6"> Knowledge: Cabling, routers, switches, security tools</label><br>
         </p>
 
-        <p><label for="otherskills"> Other Skills : </label><br>
-            <textarea id="otherskills" name="otherskills" rows="4" cols="40" placeholder="State your other skills here."></textarea>
+        <p>
+            <label>
+                <input type="checkbox" name="otherskillsCheckbox"> Other Skills </label>
+        </p>
+
+        <p>
+            <textarea name="otherskillsText" rows="4" cols="40" placeholder="State your other skills here..."></textarea>
         </p>
 
         <input type="submit" value="Apply"/>
