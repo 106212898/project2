@@ -31,7 +31,7 @@ $state              = sanitise($conn, $_POST['state']);
 $postcode           = sanitise($conn, $_POST['postcode']);
 $email              = sanitise($conn, $_POST['email']);
 $phonenumber        = sanitise($conn, $_POST['phonenumber']);
-$otherskills        = sanitise($conn, $_POST['otherskills']);
+$otherskills        = isset($_POST['otherskills']) ? sanitise($conn, $_POST['otherskills']) : "";
 
 // --- Combine technical skills checkboxes ---
 $skills = [];
@@ -92,7 +92,7 @@ $table_sql = "CREATE TABLE IF NOT EXISTS eoi (
     postcode VARCHAR(4),
     email VARCHAR(50),
     phone VARCHAR(15),
-    skills TEXT,
+    otherskills TEXT,
     status VARCHAR(20)
 )";
 
@@ -102,9 +102,9 @@ if (!mysqli_query($conn, $table_sql)) {
 
 // --- Insert form data into the database ---
 $insert_sql = "INSERT INTO eoi 
-(job_ref, first_name, last_name, dob, gender, street, suburb, state, postcode, email, phone, skills, status) 
+(job_ref, first_name, last_name, street, suburb, state, postcode, email, phone, skills, otherskills, status) 
 VALUES 
-('$jobreferencenumber', '$firstname', '$lastname', '$date', '$gender', '$street', '$suburb', '$state', '$postcode', '$email', '$phonenumber', '$skills_text', 'New')";
+('$jobreferencenumber', '$firstname', '$lastname', '$street', '$suburb', '$state', '$postcode', '$email', '$phonenumber', '$skills_text, '$otherskills' 'New')";
 
 if (mysqli_query($conn, $insert_sql)) {
     $eoi_id = mysqli_insert_id($conn); // get auto-generated EOInumber
