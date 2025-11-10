@@ -10,7 +10,7 @@
     </header>
     <?php include 'nav.inc'; ?>
 
-    <form method="post" action="https://mercury.swin.edu.au/it000000/formtest.php">
+    <form method="post" action="process_eoi.php" novalidate="novalidate">
     
 
         <p><label for="jobreferencenumber"> Job Reference Number: </label>
@@ -22,11 +22,11 @@
 
         <h3> Personal Information </h3>
         <p><label for="firstname"> First name: </label>
-            <input type="text" id="firstname" maxlength="20" size="20" required="required" pattern="^[A-Za-z ]{1,20}$" title="Alpha characters only.">
+            <input type="text" id="firstname" name="firstname" maxlength="20" size="20" required="required" pattern="^[A-Za-z ]{1,20}$" title="Alpha characters only.">
         </p>
 
         <p><label for="lastname"> Last name: </label>
-            <input type="text" id="lastname" maxlength="20" size="20" required="required" pattern="^[A-Za-z ]{1,20}$" title="Alpha characters only">
+            <input type="text" id="lastname" name="lastname" maxlength="20" size="20" required="required" pattern="^[A-Za-z ]{1,20}$" title="Alpha characters only">
         </p>
 
         <p><label for="date"> Date of Birth:  </label>
@@ -44,11 +44,11 @@
 
         <h3> Address </h3>
         <p><label for="streetaddress"> Street Address: </label>
-            <input type="text" id="streetaddress" maxlength="40" size="40" required="required">
+            <input type="text" id="streetaddress" name="street" maxlength="40" size="40" required="required">
         </p>
 
         <p><label for="suburb"> Suburb/Town: </label>
-            <input type="text" id="suburb" maxlength="40" size="40" required="required">
+            <input type="text" id="suburb" name="suburb" maxlength="40" size="40" required="required">
         </p>
 
         <p><label for="state"> State: </label>
@@ -65,7 +65,7 @@
         </p>
 
         <p><label for="postcode"> Postcode: </label>
-            <input type="text" id="postcode" maxlength="4" size="4" pattern="^\d{4}$" required="required">
+            <input type="text" id="postcode" name="postcode" maxlength="4" size="4" pattern="^\d{4}$" required="required">
         </p>
 
         <h3> Contact </h3>
