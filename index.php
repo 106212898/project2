@@ -7,7 +7,7 @@
         <img src="images/ALIMSON-LOGO.png" alt="Website Logo" class="logo">
         <h1 id="logo">Welcome to ALIMSON Tech</h1>
         <p>Your trusted IT solutions provider for reliable, secure, and high-performance business technologies.</p>
-        <a href="jobs.html" class="btn">Join Our Team</a>
+        <a href="jobs.php" class="btn">Join Our Team</a>
     </header>
     <?php include 'nav.inc'; ?>
 
@@ -20,6 +20,8 @@
         By incorporating multiple specialties, we take a broader and balanced view of the puzzle,
         ensuring reliable, secure, and high-performance technology environments.
       </p>
+      <h2>Our Mission</h2>
+      <p>At ALIMSON, we deliver integrated IT services that simplify complexity, enhance performance, and build trust—ensuring our clients thrive in a fast-evolving digital world.</p>
     </div>
   </section>
   <!-- Why Choose Us -->
@@ -48,8 +50,8 @@
   <section class="about">
     <h2>Grow With Us</h2>
     <p>We’re committed to building a workplace where you can innovate, grow, and succeed.</p>
-    <a href="apply.html" class="btn">Apply Now</a>
-    <h3>Learn more <a href="about.html">about us</a></h3>
+    <a href="apply.php" class="btn">Apply Now</a>
+    <h3>Learn more <a href="about.php">about us</a></h3>
   </section>
 
   <?php include 'footer.inc'; ?>

@@ -105,12 +105,18 @@
       <div class="card">
         <h3>Alissa Low Li Jin</h3>
         <p><strong>ID:</strong> 106213011 / J24042059</p>
+        <p><strong>Project 1:</strong></p>
         <p>Developed the CSS styling and compiled detailed job descriptions to ensure clear role definitions.</p>
+        <p><strong>Project 2:</strong></p>
+        <p>Used php to reuse common elements in the website, created settings.php file and did the validation for process_eoi.php file.</p>
       </div>
       <div class="card">
         <h3>Lim Yee Kuan</h3>
         <p><strong>ID:</strong> 106212898 / J24042030</p>
+        <p><strong>Project 1:</strong></p>
         <p>Managed the Jira workspace and designed and retrieved the content of the job application forms.</p>
+        <p><strong>Project 2:</strong></p>
+        <p>Created the EOI table</p>
       </div>
       <div class="card">
         <h3>Saw Zhi Chen (Gibson)</h3>
