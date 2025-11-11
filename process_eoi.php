@@ -23,6 +23,8 @@ if ($_SERVER['REQUEST_METHOD'] != 'POST') {
 $jobreferencenumber = sanitise($conn, $_POST['jobreferencenumber']);
 $firstname          = sanitise($conn, $_POST['firstname']);
 $lastname           = sanitise($conn, $_POST['lastname']);
+$dob                = sanitise($conn, $_POST['dob']);
+$gender             = sanitise($conn, $_POST['gender']);
 $streetaddress      = sanitise($conn, $_POST['street']);
 $suburbtown         = sanitise($conn, $_POST['suburb']);
 $state              = sanitise($conn, $_POST['state']);
@@ -83,6 +85,8 @@ CREATE TABLE IF NOT EXISTS eoi (
     JobReferenceNumber VARCHAR(10),
     FirstName VARCHAR(20),
     LastName VARCHAR(20),
+    DOB DATE(10),
+    Gender VARCHAR(10),
     StreetAddress VARCHAR(40),
     SuburbTown VARCHAR(40),
     State VARCHAR(10),
@@ -98,9 +102,9 @@ if (!mysqli_query($conn, $create_table_sql)) {
 
 // --- Insert form data into the database ---
 $insert_sql = "INSERT INTO eoi 
-(JobReferenceNumber, FirstName, LastName, StreetAddress, SuburbTown, State, Postcode, Email, PhoneNumber, OtherSkills, Status) 
+(JobReferenceNumber, FirstName, LastName, DOB, Gender, StreetAddress, SuburbTown, State, Postcode, Email, PhoneNumber, OtherSkills, Status) 
 VALUES 
-('$jobreferencenumber', '$firstname', '$lastname', '$streetaddress', '$suburbtown', '$state', '$postcode', '$email', '$phonenumber', '$otherskills', 'New')";
+('$jobreferencenumber', '$firstname', '$lastname', '$dob', '$gender', '$streetaddress', '$suburbtown', '$state', '$postcode', '$email', '$phonenumber', '$otherskills', 'New')";
 
 if (mysqli_query($conn, $insert_sql)) {
     $eoi_id = mysqli_insert_id($conn); // get auto-generated EOInumber
